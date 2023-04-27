@@ -1,3 +1,5 @@
 flutter_native_splash:
-  color: "#FFBF00"
-  image: assets/index.png
+  color: " #FFFFFF"
+  image: assets/signlanguage.png
+  branding: assets/branding.png
+  branding_mode: bottom

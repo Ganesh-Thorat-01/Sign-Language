@@ -241,41 +241,50 @@ class _PlayPageState extends State<PlayPage> {
   Widget build(BuildContext context) {
     String fulltext=widget.sentence;
 
-    return Scaffold(
-      appBar: _isFullScreen
-          ? null
-          : AppBar( 
-              leading: IconButton(
-                icon: Icon(Icons.arrow_back),
-                onPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => MyApp()),
+    return WillPopScope(
+      onWillPop: (){
+        return Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => MyApp()),
+          );
+        
+      },
+      child: Scaffold(
+        appBar: _isFullScreen
+            ? null
+            : AppBar( 
+                leading: IconButton(
+                  icon: Icon(Icons.arrow_back),
+                  onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MyApp()),
+                ),
+                ), 
+                title: Text("SignMate"),
               ),
-              ), 
-              title: Text("Sign Language"),
-            ),
-      body: _isFullScreen
-          ? Container(
-              child: Center(child: _playView(context)),
-              decoration: BoxDecoration(color: Colors.black),
-            )
-          : Column(children: <Widget>[
-              Container(
+        body: _isFullScreen
+            ? Container(
                 child: Center(child: _playView(context)),
                 decoration: BoxDecoration(color: Colors.black),
-              ),
-              Expanded(
-                child: _listView(),
-              ),
-            Container(
-            decoration: BoxDecoration(color: Colors.blue,borderRadius: BorderRadius.only(topLeft: Radius.circular(12),topRight: Radius.circular(12)),
-                                      boxShadow: [BoxShadow(color: Colors.blue,blurRadius:12)]),
-            padding: EdgeInsets.all(9),
-            
-            //color: Colors.blue,
-            width: double.infinity,
-            child: Text(fulltext,style: TextStyle(height: 1.2, fontSize: 32,color: Colors.white),textAlign: TextAlign.center,))
-            ]),
+              )
+            : Column(children: <Widget>[
+                Container(
+                  child: Center(child: _playView(context)),
+                  decoration: BoxDecoration(color: Colors.black),
+                ),
+                Expanded(
+                  child: _listView(),
+                ),
+              Container(
+              decoration: BoxDecoration(color: Colors.indigoAccent,borderRadius: BorderRadius.only(topLeft: Radius.circular(12),topRight: Radius.circular(12)),
+                                        boxShadow: [BoxShadow(color: Colors.indigo,blurRadius:12)]),
+              padding: EdgeInsets.all(9),
+              
+              //color: Colors.blue,
+              width: double.infinity,
+              child: Text(fulltext,style: TextStyle(height: 1.2, fontSize: 32,color: Colors.white),textAlign: TextAlign.center,))
+              ]),
+      ),
     );
   }
 

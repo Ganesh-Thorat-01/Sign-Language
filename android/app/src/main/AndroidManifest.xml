@@ -12,7 +12,7 @@
         </intent>
     </queries>
    <application
-        android:label="signlanguage"
+        android:label="SignMate"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

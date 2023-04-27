@@ -39,11 +39,12 @@ class MyApp extends StatelessWidget {
     checkFile();
 
     return MaterialApp(
-      
-      title: 'Sign Language',
+      debugShowCheckedModeBanner: false,
+      title: 'SignMate',
       theme: ThemeData(
         fontFamily: "OpenSans",
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.indigo,
+        
       ),
       home: MyHomePage(),
     );

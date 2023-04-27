@@ -116,6 +116,7 @@ class _LoadingState extends State<Loading> {
 
         }
         else{
+          print(response.body);
           ScaffoldMessenger.of(context).showSnackBar( SnackBar(
           behavior: SnackBarBehavior.floating,
           backgroundColor: Colors.transparent,
@@ -253,6 +254,6 @@ class _LoadingState extends State<Loading> {
 
 
 class ApiConstants {
-  static String baseUrl = 'https://signlanguageconverter.herokuapp.com';
+  static String baseUrl = 'http://ec2-54-147-236-46.compute-1.amazonaws.com';
   static String usersEndpoint = '/a2sl';
 }

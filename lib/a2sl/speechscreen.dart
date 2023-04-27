@@ -20,7 +20,7 @@ class _SpeechScreenState extends State<SpeechScreen> {
     'flutter': HighlightedWord(
       onTap: () => print('flutter'),
       textStyle: const TextStyle(
-        color: Colors.blue,
+        color: Colors.indigoAccent,
         fontSize: 32.0,
         fontWeight: FontWeight.bold,
       ),

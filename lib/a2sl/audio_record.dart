@@ -6,17 +6,21 @@ import 'loading.dart';
 
 
 
-class AudioRecord extends StatefulWidget {
+class AudioRecord extends StatefulWidget{
   //const AudioRecord({ Key? key }) : super(key: key);
+ 
 
   @override
   State<AudioRecord> createState() => _AudioRecordState();
 }
 
-class _AudioRecordState extends State<AudioRecord> {
+class _AudioRecordState extends State<AudioRecord> with AutomaticKeepAliveClientMixin {
+   @override
+  bool get wantKeepAlive=>true;
   
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Scaffold(
       
       body: Center(child: SpeechScreen()),
